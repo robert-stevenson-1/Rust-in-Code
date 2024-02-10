@@ -37,10 +37,15 @@ fn main() {
         println!("You guessed: {guess}");
         
         // rust allows variable to shadow another variable with the same name
-        let guess: u32 = guess // convert user input to integer
+        let guess: u32 = match guess // convert user input to integer
         .trim() // trim the user input, eliminating any whitespace at the start and end of the string
         .parse() // convert the string to integer
-        .expect("Please type a number!"); // this method will panic and crash the program if an error occurs
+        {
+            // The value is a valid number, it's `ok`, continues the program logic
+            Ok(num) => num,
+            // The value it `err`, then continue the loop from the beginning
+            Err(_) => continue,
+        };
 
         // compare the user input with the random number
         // `cmp` compares two values and returns an `Ordering
@@ -50,8 +55,10 @@ fn main() {
             // `Ordering` is an enum that can be either `Less`, `Greater`, or `Equal`
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
-            Ordering::Equal => println!("You win!"),
-            break; // break the loop
+            Ordering::Equal => {
+                println!("You win!");
+                break; // break the loop
+            }
         }
     }
 } 
