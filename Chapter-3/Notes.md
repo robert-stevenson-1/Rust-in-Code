@@ -7,6 +7,12 @@
     - [Constants](#constants)
     - [Shadowing](#shadowing)
   - [Data Type](#data-type)
+    - [Integer](#integer)
+    - [Float-Point](#float-point)
+    - [Numeric Operation](#numeric-operation)
+    - [Boolean](#boolean)
+    - [Character](#character)
+  - [Compound Types](#compound-types)
 
 
 ## Variable and Mutability
@@ -97,3 +103,53 @@ However you can't use this for mutated variable.
 - *Basically, can't change the type of data store in a mutable variable*
 
 ## Data Type
+
+Scalar Types:
+
+- Represent  a single value
+- 4 Primary types:
+  - integer
+  - floating-point
+  - numbers
+  - Booleans
+  - character
+
+### Integer
+
+| Length  | Signed | Unsigned |
+| :------ | :----- | :------- |
+| 8-bit   | i8     | u8       |
+| 16-bit  | i16    | u16      |
+| 32-bit  | i32    | u32      |
+| 64-bit  | i64    | u64      |
+| 128-bit | i128   | u128     |
+| arch    | isize  | usize    |
+
+- `isize` and `usize` types depend on the architecture of the computer your program is running on, which is denoted in the table as “arch”: 64 bits if you’re on a 64-bit architecture and 32 bits if you’re on a 32-bit architecture.
+
+### Float-Point
+
+They have two primary types:
+- `f32`, 32-bit
+- `f64`, 64-bit
+  
+### Numeric Operation
+
+basic mathematical operations for all the number types:
+
+- addition
+- subtraction
+- multiplication
+- division
+- remainder
+
+### Boolean
+
+*Just like any other language really...*
+
+### Character
+
+Rust’s char type is four bytes in size and represents a Unicode Scalar Value, meaning it can represent more than just ASCII.
+
+## Compound Types
+
