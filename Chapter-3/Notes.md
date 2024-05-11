@@ -13,6 +13,9 @@
     - [Boolean](#boolean)
     - [Character](#character)
   - [Compound Types](#compound-types)
+    - [Tuple](#tuple)
+    - [Array](#array)
+  - [Functions](#functions)
 
 
 ## Variable and Mutability
@@ -41,7 +44,7 @@ To overcome this we would have to make the variable mutable with `mut`.
 
 ### Constants
 
-They are values that can't be changes once assigned, but are different from variables.
+They are values that can't be changed once assigned, but are different from variables.
 
 1. You can't use `mut` with constants, they are immutable by default.
 2. Constants are declared using `const` and the values must be *annotated*.
@@ -153,3 +156,30 @@ Rust’s char type is four bytes in size and represents a Unicode Scalar Value, 
 
 ## Compound Types
 
+### Tuple
+
+- A general way of grouping together values of various types
+- Mixed length
+- Cannot grow or shrink once declared
+- When accessing a tuple element directly we have to use a `.` to index, eg `let x = (12, 3); let x1 = x.0;`
+
+### Array
+
+- Array are fixed length
+- Every element is the same type
+- Store data on the stack instead of the heap (See [Chapter 4 Notes](/Chapter-4/Notes.md))
+- *vector* is similar collection that allows for the growth and shrinking of the length
+- used square bracket notation `[el_1, el_2, el_3, ..., el_N]`
+
+access element notation
+
+```rust
+fn main() {
+    let a = [1, 2, 3, 4, 5];
+
+    let first = a[0];
+    let second = a[1];
+}
+```
+
+## Functions
