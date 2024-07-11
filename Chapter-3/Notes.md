@@ -16,6 +16,8 @@
     - [Tuple](#tuple)
     - [Array](#array)
   - [Functions](#functions)
+    - [Parameters](#parameters)
+    - [Statements and Expressions](#statements-and-expressions)
 
 
 ## Variable and Mutability
@@ -183,3 +185,42 @@ fn main() {
 ```
 
 ## Functions
+
+- `main` is the entry point of the program.
+- `fn` is used to declare the function
+
+example:
+
+```rust
+fn main() {
+    println!("Hello, world!");
+
+    another_function();
+}
+
+fn another_function() {
+    println!("Another function.");
+}
+```
+
+-  Rust doesn't care about where the function is declared
+   -  Function just have to be in scope with where they are being called
+
+### Parameters
+
+- parameters are declared with the data type specified
+
+example:
+```rust
+fn main() {
+    print_labeled_measurement(5, 'h');
+}
+
+fn print_labeled_measurement(value: i32, unit_label: char) {
+    println!("The measurement is: {value}{unit_label}");
+}
+```
+
+### Statements and Expressions
+
+- **Statements** are instructions that perform some sort of action and done
